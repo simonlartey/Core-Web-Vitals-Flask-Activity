@@ -2,7 +2,6 @@ from flask import Blueprint, render_template
 from flask import request
 import requests
 import os
-import time
 #from dotenv import load_dotenv
 #load_dotenv()
 
@@ -17,7 +16,6 @@ def home():
 
 @main_blueprint.route('/task1')
 def task1():
-    time.sleep(3)
     return render_template('task1.html')
 
 
