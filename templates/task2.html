@@ -1,30 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Task 2 Activity</title>
 </head>
+
 <body>
 
 <h1>Which metric/s has a bad performance on this page?</h1>
+
 <p>Hint: click the button while Lighthouse is running.</p>
-<button onclick="slowFunction()">Click Me</button>
 
-<p id="output"></p>
+<button onclick="slowFunction()" aria-label="Run processing task">
+Click Me
+</button>
 
-<p>After you identify the metric, please fix it and run Lighthouse again (take screenshots of the report before and after the fix).</p>
+<p id="output" aria-live="polite"></p>
 
+<p>
+After you identify the metric, please fix it and run Lighthouse again
+(take screenshots of the report before and after the fix).
+</p>
 
 <script>
 
 function slowFunction(){
 
-    let start = Date.now();
-
-    while(Date.now() - start < 2000){
-    }
-
     document.getElementById("output").innerText =
+        "Processing...";
+
+    setTimeout(function(){
+
+        document.getElementById("output").innerText =
         "Button finished processing";
+
+    }, 2000);
 
 }
 

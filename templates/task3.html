@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Task 3 Activity</title>
 </head>
+
 <body>
 
 <h1>Which metric/s has a bad performance on this page?</h1>
 
 <p>This is a text box with text in it, showing some text in English.</p>
 
-<div id="image-container"></div>
+<div id="image-container" style="width:1500px; height:800px;"></div>
 
 <script>
 
@@ -17,6 +20,9 @@ setTimeout(() => {
 
     const img = document.createElement("img");
     img.src = "https://picsum.photos/1500/800";
+    img.width = 1500;
+    img.height = 800;
+    img.alt = "Landscape photo";
 
     document.getElementById("image-container")
         .appendChild(img);
@@ -26,6 +32,11 @@ setTimeout(() => {
 </script>
 
 <p>More content below (in English, similar to the English text box with text above).</p>
-<img src="https://picsum.photos/1600/900" width="100%">
+
+<img src="https://picsum.photos/1600/900"
+     width="1600"
+     height="900"
+     alt="Random landscape photo">
+
 </body>
 </html>
